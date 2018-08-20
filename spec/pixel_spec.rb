@@ -18,46 +18,46 @@ RSpec.describe Pixel do
 
     context  'use muliple capital letters for [A-Z]' do
       it 'It should be invalid and raise error' do
-        expect { pixel.colour = 'OO' }.to raise_error(StandardError)
+        expect { pixel.colour = 'OO' }.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
 
     context 'use multiple single small letters from [a-z]' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = 'o'}.to raise_error(StandardError)
+        expect { pixel.colour = 'o'}.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
 
     context 'use multiple small letters from [a-z]' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = 'OO'}.to raise_error(StandardError)
+        expect { pixel.colour = 'OO'}.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
 
     context 'using multiple letters from [A-Za-z]' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = 'Oo'}.to raise_error(StandardError)
+        expect { pixel.colour = 'Oo'}.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
 
     context 'using multiple letters from [A-Za-z0-9]' do
       it 'should be invalid and raise error' do
-       expect { pixel.colour = 'Oo0' }.to raise_error(StandardError)
-       expect { pixel.colour = 'O0' }.to raise_error(StandardError)
-       expect { pixel.colour = 'o0' }.to raise_error(StandardError)
+       expect { pixel.colour = 'Oo0' }.to raise_error(StandardError, 'Invalid Pixel')
+       expect { pixel.colour = 'O0' }.to raise_error(StandardError, 'Invalid Pixel')
+       expect { pixel.colour = 'o0' }.to raise_error(StandardError, 'Invalid Pixel')
      end
    end
 
     context 'using a single digit' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = '1'}.to raise_error(StandardError)
+        expect { pixel.colour = '1'}.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
 
     context 'using special characters' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = '<'}.to raise_error(StandardError)
-        expect { pixel.colour = '?'}.to raise_error(StandardError)
+        expect { pixel.colour = '<'}.to raise_error(StandardError, 'Invalid Pixel')
+        expect { pixel.colour = '?'}.to raise_error(StandardError, 'Invalid Pixel')
       end
     end
   end
