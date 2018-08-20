@@ -56,7 +56,8 @@ RSpec.describe Pixel do
 
     context 'using special characters' do
       it 'should be invalid and raise error' do
-        expect { pixel.colour = '22'}.to raise_error(StandardError)
+        expect { pixel.colour = '<'}.to raise_error(StandardError)
+        expect { pixel.colour = '?'}.to raise_error(StandardError)
       end
     end
   end
