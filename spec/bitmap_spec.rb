@@ -14,4 +14,16 @@ describe Bitmap do
         Bitmap.new('251', '5')
       end.to raise_error(StandardError, 'Invalid Bitmap Grid')
     end
+
+    it 'raises error if height is less than 1' do
+      expect do
+        Bitmap.new('5', '1')
+      end.to raise_error(StandardError, 'Invalid Bitmap Grid')
+    end
+
+    it 'raises error if height is greater than 250' do
+      expect do
+        Bitmap.new('5', '251')
+      end.to raise_error(StandardError, 'Invalid Bitmap Grid')
+    end
 end
