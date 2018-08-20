@@ -1,3 +1,2 @@
 class Bitmap
-  
 end
