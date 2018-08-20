@@ -8,4 +8,10 @@ describe Bitmap do
       end.to raise_error(StandardError, 'Invalid Bitmap Grid')
     end
   end
+
+    it 'should generate error if width is greater than 250' do
+      expect do
+        Bitmap.new('251', '5')
+      end.to raise_error(StandardError, 'Invalid Bitmap Grid')
+    end
 end
