@@ -17,7 +17,7 @@ describe Bitmap do
 
     it 'raises error if height is less than 1' do
       expect do
-        Bitmap.new('5', '1')
+        Bitmap.new('5', '0')
       end.to raise_error(StandardError, 'Bitmap grid dimensions out of bounds')
     end
 

@@ -6,7 +6,14 @@ class Bitmap
   end
 
   def generate_pixels(width, height)
-    
+    if is_bitmap_out_of_bounds?(width) || is_bitmap_out_of_bounds?(height)
+      raise StandardError, 'Bitmap grid dimensions out of bounds'
+    end
   end
 
+  private
+
+  def is_bitmap_out_of_bounds?(dimension, max = 250)
+    dimension < 1 || dimension > max
+  end
 end
