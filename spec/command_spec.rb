@@ -33,7 +33,28 @@ describe Command do
       end
 
       context '`L X Y C`' do
-        let(:input) { 'L 2 3 C' }
+        let(:input) { 'L 3 2 C' }
+        it 'should not raise error' do
+          should_not_raise_error
+        end
+      end
+
+      context '`V X Y1 Y2 C`' do
+        let(:input) { 'V 2 1 3 C'}
+        it 'should not raise error' do
+          should_not_raise_error
+        end
+      end
+
+      context '`H X1 X2 Y C`' do
+        let(:input) { 'H 3 2 2 C' }
+        it 'should not raise error'  do
+          should_not_raise_error
+        end
+      end
+
+      context '`S`' do
+        let(:input) { 'S' }
         it 'should not raise error' do
           should_not_raise_error
         end
