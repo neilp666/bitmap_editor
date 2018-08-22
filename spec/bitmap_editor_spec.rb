@@ -103,3 +103,21 @@ describe BitmapEditor do
                                )
       end
     end
+
+    describe 'Example sequence of commands' do
+      context 'when given a sequence of commands' do
+        let(:output) { `bin/bitmap_editor ./examples/all_coomands.txt` }
+
+        it 'creates a bitmap with expected colours' do
+          expect(output).to eq(<<~EOS
+                              OOOOO
+                              OOZZZ
+                              AWOOO
+                              OWOOO
+                              OWOOO
+                              OWOOO
+                            EOS
+                            )
+        end
+      end
+    end
