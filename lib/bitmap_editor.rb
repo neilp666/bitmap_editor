@@ -1,6 +1,9 @@
 require '../lib/bitmap.rb'
 
 class BitmapEditor
+  def initialize
+    @bitmap = nil
+  end
 
   def run(file)
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
