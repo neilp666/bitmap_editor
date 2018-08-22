@@ -52,3 +52,20 @@ describe BitmapEditor do
       end
     end
   end
+
+  describe 'L' do
+    context 'when give three arugments X, Y and C' do
+      let(:output) { `bin/bitmap_editor ./examples/colour_pixel.txt` }
+
+      it 'colours the bitmap pixel (X,Y) with the colour C ' do
+        expect(output).to eq(<<~EOS
+                                OOOOO
+                                OOOOO
+                                AOOOO
+                                OOOOO
+                                OOOOO
+                              EOS
+                              )
+      end
+    end
+  end
