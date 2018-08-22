@@ -28,4 +28,10 @@ describe BitmapEditor do
     it 'raises error when running the H command'  do
       expect { @bitmap_editor.execute(['H', '1', '2', '3', 'O']) }.to raise_error(StandardError, 'No bitmap found')
     end
-end
+  end
+
+  describe 'Unknown command' do
+    it 'raises Unknown command error' do
+      expect { @bitmap_editor.execute(['K']) }.to raise_error(StandardError, 'Unknown command:K')
+    end
+  end
