@@ -21,4 +21,11 @@ class BitmapEditor
       end
     end
   end
+
+  private
+
+  def exit_console
+    puts 'bye!'
+    @running = false
+  end
 end
