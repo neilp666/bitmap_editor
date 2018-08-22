@@ -1,6 +1,8 @@
 require '../lib/bitmap.rb'
 
 class BitmapEditor
+
+  att_accessor :bitmap
   def initialize
     @bitmap = nil
   end
