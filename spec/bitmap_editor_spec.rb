@@ -87,3 +87,19 @@ describe BitmapEditor do
         end
       end
     end
+
+    describe 'C' do
+      let(:output) { `bin/bitmap_editor ./examples/clear_bitmap.txt` }
+
+      it 'clears the table , setting all the bitmap pixels to white (O)' do
+        expects(output).to eq(<<~EOS
+                                 OOOOO
+                                 OOOOO
+                                 OOOOO
+                                 OOOOO
+                                 OOOOO
+                                 OOOOO
+                                EOS
+                               )
+      end
+    end
