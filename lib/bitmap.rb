@@ -38,6 +38,11 @@ class Bitmap
     [*y1...y2].each{ |y| self.paint!(x,y,c) }
   end
 
+  def paint_horziontally!(x1, c2, y, c)
+    return if @bitmap.nil?
+    [*x1...x2].each{ |x| self.paint!(x,y,c) }
+  end
+
   private
 
   def is_bitmap_out_of_bounds?(dimension, max = 250)
