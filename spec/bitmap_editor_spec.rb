@@ -35,3 +35,20 @@ describe BitmapEditor do
       expect { @bitmap_editor.execute(['K']) }.to raise_error(StandardError, 'Unknown command:K')
     end
   end
+
+  describe 'I' do
+    context 'when given two integers as arguments' do
+      let(:output) { `bin/bitmap_editor ./examples/create_bitmap.txt` }
+
+      it 'generates a new  M x N bitmap image setting all pixels to white (O)' do
+        expect(output).to eq(<<~EOS
+                                OOOOO
+                                OOOOO
+                                OOOOO
+                                OOOOO
+                                OOOOO
+                              EOS
+                              )
+      end
+    end
+  end
