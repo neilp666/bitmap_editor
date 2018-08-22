@@ -1,3 +1,5 @@
+require '../lib/bitmap.rb'
+
 class BitmapEditor
 
   def run(file)
