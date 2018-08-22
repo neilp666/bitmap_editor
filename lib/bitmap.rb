@@ -33,6 +33,11 @@ class Bitmap
     @bitmap.set(y.to_i+offset, x.to_i+offset, c)
   end
 
+  def paint_vertically!(x, y1, y2, c)
+    return if @bitmap.nil?
+    [*y1...y2].each{ |y| self.paint!(x,y,c) }
+  end
+
   private
 
   def is_bitmap_out_of_bounds?(dimension, max = 250)
