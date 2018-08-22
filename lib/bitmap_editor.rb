@@ -12,15 +12,25 @@ class BitmapEditor
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
 
     File.open(file).each do |line|
-      line = line.chomp
-      case line
-      when 'S'
-          puts "There is no image"
-      else
-          puts 'unrecognised command :('
+      command, *args = line.chomp.split(" ")
+      case command
+      when "I"
+        @bitmap = Bitmap.new(*args)
+      when "L"
+        @bitmap.paint!(*args)
+      when "H"
+        @bitmap.paint_horziontally!(*args)
+      when "V"
+        @bitmap.paint_vertically!(*args)
+      when "C"
+        @bitmap.clear!
+      when "S"
+        @bitmap.show!
       end
     end
   end
+end
+
 
   private
 
