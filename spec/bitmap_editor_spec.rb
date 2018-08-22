@@ -69,3 +69,21 @@ describe BitmapEditor do
       end
     end
   end
+
+  describe 'H' do
+    context 'when given 4 arguments X1, X2, Y and C' do
+      let(:output) { `bin/bitmap_editor ./examples/colour_horizontal_segment.txt` }
+
+      it 'draws a horizontal segment of colour C in col Y between coloumns X1 and X2' do
+        expect(output).to eq(<<~EOS
+                                OOOOO
+                                OOZZZ
+                                OOOOO
+                                OOOOO
+                                OOOOO
+                                OOOOO
+                              EOS
+                            )
+        end
+      end
+    end
