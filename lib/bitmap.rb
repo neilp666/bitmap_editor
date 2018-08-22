@@ -27,6 +27,12 @@ class Bitmap
     return if @bitmap.nil?
   end
 
+  def paint!(x, y, c)
+    return if @bitmap.nil?
+    offset = -1
+    @bitmap.set(y.to_i+offset, x.to_i+offset, c)
+  end
+
   private
 
   def is_bitmap_out_of_bounds?(dimension, max = 250)
